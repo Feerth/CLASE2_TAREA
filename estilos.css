@@ -162,6 +162,12 @@ body {
     object-fit: cover;
     border: 2px solid rgba(99, 91, 255, 0.4);
     transition: border-color 0.3s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(255, 255, 255, 0.1);
+    color: #ffffff;
+    font-size: 16px;
 }
 
 .user-info {
@@ -289,28 +295,28 @@ body {
         width: 80px;
         padding: 24px 12px;
     }
-    
-    .logo-text, 
-    .link-text, 
+
+    .logo-text,
+    .link-text,
     .user-info {
         display: none;
     }
-    
+
     .logo-wrapper {
         justify-content: center;
     }
-    
+
     .nav-link {
         justify-content: center;
         padding: 12px;
     }
-    
+
     .user-profile {
         justify-content: center;
         padding: 8px;
         background-color: transparent;
     }
-    
+
     .avatar {
         border-color: transparent;
     }
@@ -321,7 +327,7 @@ body {
     .menu-toggle {
         display: block;
     }
-    
+
     .top-bar {
         position: fixed;
         top: 0;
@@ -331,7 +337,7 @@ body {
         padding: 16px 20px;
         box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
     }
-    
+
     .sidebar {
         position: fixed;
         left: 0;
@@ -343,19 +349,20 @@ body {
         box-shadow: 20px 0 30px rgba(0, 0, 0, 0.25);
         transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
-    
+
     .sidebar.active {
         transform: translateX(0);
     }
-    
+
     .main-content {
-        padding-top: 73px; /* Espacio para la barra superior fija */
+        padding-top: 73px;
+        /* Espacio para la barra superior fija */
     }
-    
+
     .content-body {
         padding: 20px;
     }
-    
+
     .welcome-card {
         padding: 20px;
     }

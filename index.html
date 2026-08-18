@@ -28,7 +28,7 @@
                     <span class="logo-text">AnalyticsPro</span>
                 </div>
             </div>
-            
+
             <nav class="sidebar-nav">
                 <ul class="nav-list">
                     <li class="nav-item">
@@ -69,10 +69,12 @@
                     </li>
                 </ul>
             </nav>
-            
+
             <div class="sidebar-footer">
                 <div class="user-profile">
-                    <img class="avatar" src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&q=80&w=120&h=120" alt="María López">
+                    <div class="avatar">
+                        <i class="fa-solid fa-user"></i>
+                    </div>
                     <div class="user-info">
                         <span class="user-name">María López</span>
                         <span class="user-role">Administrador</span>
@@ -80,7 +82,7 @@
                 </div>
             </div>
         </aside>
-        
+
         <!-- Main Content Area -->
         <main class="main-content">
             <header class="top-bar">
@@ -91,35 +93,9 @@
                     <h2>Resumen</h2>
                 </div>
             </header>
-            
+
             <div class="content-body">
-                <div class="welcome-card">
-                    <h1>Dashboard Principal</h1>
-                    <p>Esta es la visualización de la barra lateral responsive implementada con <strong>Flexbox</strong>.</p>
-                    <div class="responsive-info">
-                        <div class="info-item">
-                            <i class="fa-solid fa-desktop"></i>
-                            <div>
-                                <strong>Escritorio:</strong>
-                                <span>Sidebar completa y fija (260px) con efectos de hover.</span>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <i class="fa-solid fa-tablet-screen-button"></i>
-                            <div>
-                                <strong>Tablet:</strong>
-                                <span>Se contrae automáticamente a modo compacto (solo iconos, 80px).</span>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <i class="fa-solid fa-mobile-screen-button"></i>
-                            <div>
-                                <strong>Móvil:</strong>
-                                <span>Se oculta fuera de la pantalla y se abre como panel deslizante (drawer) al tocar el menú hamburguesa.</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <!-- El contenido principal irá aquí -->
             </div>
         </main>
     </div>
@@ -129,12 +105,12 @@
         document.addEventListener('DOMContentLoaded', () => {
             const menuToggle = document.getElementById('menu-toggle');
             const sidebar = document.getElementById('sidebar');
-            
+
             menuToggle.addEventListener('click', (e) => {
                 e.stopPropagation();
                 sidebar.classList.toggle('active');
             });
-            
+
             document.addEventListener('click', (e) => {
                 if (sidebar.classList.contains('active') && !sidebar.contains(e.target) && !menuToggle.contains(e.target)) {
                     sidebar.classList.remove('active');
