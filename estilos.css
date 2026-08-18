@@ -1,5 +1,3 @@
-/* Estilos para el Dashboard y Barra Lateral Responsive (Flexbox) */
-
 :root {
     --bg-sidebar: #0e1629;
     --bg-main: #f8fafc;
@@ -24,14 +22,12 @@ body {
     overflow-x: hidden;
 }
 
-/* Contenedor Principal con Flexbox */
 .dashboard-container {
     display: flex;
     min-height: 100vh;
     width: 100vw;
 }
 
-/* Barra Lateral (Sidebar) */
 .sidebar {
     display: flex;
     flex-direction: column;
@@ -45,7 +41,6 @@ body {
     transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease;
 }
 
-/* Cabecera de la Sidebar */
 .sidebar-header {
     display: flex;
     align-items: center;
@@ -80,12 +75,10 @@ body {
     transition: opacity 0.2s ease;
 }
 
-/* Micro-animación para el Logo */
 .logo-wrapper:hover .logo-icon {
     transform: scale(1.05) rotate(5deg);
 }
 
-/* Navegación */
 .sidebar-nav {
     flex: 1;
 }
@@ -119,7 +112,6 @@ body {
     transition: transform 0.2s ease;
 }
 
-/* Efectos Hover y Active */
 .nav-link:hover {
     background-color: rgba(255, 255, 255, 0.05);
     color: #ffffff;
@@ -135,7 +127,6 @@ body {
     box-shadow: 0 4px 12px rgba(99, 91, 255, 0.35);
 }
 
-/* Footer de la Sidebar - Información del Usuario */
 .sidebar-footer {
     margin-top: auto;
 }
@@ -188,7 +179,6 @@ body {
     font-size: 12px;
 }
 
-/* Área del Contenido Principal */
 .main-content {
     flex: 1;
     display: flex;
@@ -232,64 +222,6 @@ body {
     flex: 1;
 }
 
-.welcome-card {
-    background-color: #ffffff;
-    padding: 32px;
-    border-radius: 16px;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
-    border: 1px solid #f1f5f9;
-    max-width: 800px;
-}
-
-.welcome-card h1 {
-    font-size: 24px;
-    color: var(--text-main);
-    margin-bottom: 12px;
-}
-
-.welcome-card p {
-    color: var(--text-muted);
-    line-height: 1.6;
-    margin-bottom: 24px;
-}
-
-.responsive-info {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    border-top: 1px solid #f1f5f9;
-    padding-top: 24px;
-}
-
-.info-item {
-    display: flex;
-    align-items: flex-start;
-    gap: 16px;
-}
-
-.info-item i {
-    font-size: 20px;
-    color: var(--primary);
-    padding-top: 2px;
-}
-
-.info-item strong {
-    display: block;
-    color: var(--text-main);
-    font-size: 14px;
-    margin-bottom: 4px;
-}
-
-.info-item span {
-    color: var(--text-muted);
-    font-size: 14px;
-}
-
-/* ==========================================================================
-   Responsividad con Media Queries y Flexbox
-   ========================================================================== */
-
-/* 1. Modo Tablet (Pantallas Medianas) */
 @media (max-width: 991px) and (min-width: 577px) {
     .sidebar {
         width: 80px;
@@ -322,7 +254,6 @@ body {
     }
 }
 
-/* 2. Modo Móvil (Pantallas Pequeñas) */
 @media (max-width: 576px) {
     .menu-toggle {
         display: block;
@@ -356,14 +287,9 @@ body {
 
     .main-content {
         padding-top: 73px;
-        /* Espacio para la barra superior fija */
     }
 
     .content-body {
-        padding: 20px;
-    }
-
-    .welcome-card {
         padding: 20px;
     }
 }
