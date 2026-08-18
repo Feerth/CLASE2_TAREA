@@ -1,10 +1,9 @@
-# Dashboard Sidebar Responsive
+# Dashboard Administrativo
 
-Este proyecto consiste en la implementación de una barra lateral (sidebar) administrativa moderna y responsiva utilizando únicamente HTML, CSS puro y **Flexbox** como modelo de diseño principal.
+Este proyecto consiste en la implementación de una (sidebar) administrativa moderna y responsiva utilizando únicamente HTML, CSS puro y **Flexbox** como modelo de diseño principal.
 
 ## Características
 
-* **Diseño Moderno:** Estética oscura ("dark mode") en negro profundo con acentos y micro-interacciones en color morado.
 * **100% Responsivo:**
   * **Escritorio:** Barra lateral completa de ancho fijo (260px) con efectos visuales avanzados al pasar el cursor.
   * **Tablet (Pantallas medianas):** Se contrae automáticamente a un formato compacto (80px), mostrando únicamente los iconos.
