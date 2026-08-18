@@ -1,0 +1,362 @@
+/* Estilos para el Dashboard y Barra Lateral Responsive (Flexbox) */
+
+:root {
+    --bg-sidebar: #0e1629;
+    --bg-main: #f8fafc;
+    --bg-card: #ffffff;
+    --text-main: #1e293b;
+    --text-muted: #64748b;
+    --primary: #635bff;
+    --primary-hover: #4f46e5;
+    --border-color: #e2e8f0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background-color: var(--bg-main);
+    color: var(--text-main);
+    overflow-x: hidden;
+}
+
+/* Contenedor Principal con Flexbox */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+    width: 100vw;
+}
+
+/* Barra Lateral (Sidebar) */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    width: 260px;
+    height: 100vh;
+    background-color: var(--bg-sidebar);
+    padding: 24px 16px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1), padding 0.3s ease;
+}
+
+/* Cabecera de la Sidebar */
+.sidebar-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.logo-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #8b5cf6, #6366f1);
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    transition: transform 0.3s ease;
+}
+
+.logo-text {
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    transition: opacity 0.2s ease;
+}
+
+/* Micro-animación para el Logo */
+.logo-wrapper:hover .logo-icon {
+    transform: scale(1.05) rotate(5deg);
+}
+
+/* Navegación */
+.sidebar-nav {
+    flex: 1;
+}
+
+.nav-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 12px 16px;
+    color: #94a3b8;
+    text-decoration: none;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 15px;
+    transition: all 0.2s ease;
+}
+
+.nav-link i {
+    font-size: 18px;
+    width: 22px;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+
+/* Efectos Hover y Active */
+.nav-link:hover {
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #ffffff;
+}
+
+.nav-link:hover i {
+    transform: scale(1.1);
+}
+
+.nav-link.active {
+    background: linear-gradient(135deg, var(--primary), var(--primary-hover));
+    color: #ffffff;
+    box-shadow: 0 4px 12px rgba(99, 91, 255, 0.35);
+}
+
+/* Footer de la Sidebar - Información del Usuario */
+.sidebar-footer {
+    margin-top: auto;
+}
+
+.user-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 12px;
+    background-color: rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.user-profile:hover {
+    background-color: rgba(255, 255, 255, 0.06);
+}
+
+.avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid rgba(99, 91, 255, 0.4);
+    transition: border-color 0.3s ease;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    transition: opacity 0.2s ease;
+}
+
+.user-name {
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.user-role {
+    color: #64748b;
+    font-size: 12px;
+}
+
+/* Área del Contenido Principal */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    background-color: var(--bg-main);
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: #ffffff;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 20px;
+    color: var(--text-main);
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 8px;
+    margin-right: 16px;
+    transition: background-color 0.2s;
+}
+
+.menu-toggle:hover {
+    background-color: #f1f5f9;
+}
+
+.header-title h2 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--text-main);
+}
+
+.content-body {
+    padding: 40px;
+    flex: 1;
+}
+
+.welcome-card {
+    background-color: #ffffff;
+    padding: 32px;
+    border-radius: 16px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.02);
+    border: 1px solid #f1f5f9;
+    max-width: 800px;
+}
+
+.welcome-card h1 {
+    font-size: 24px;
+    color: var(--text-main);
+    margin-bottom: 12px;
+}
+
+.welcome-card p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 24px;
+}
+
+.responsive-info {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    border-top: 1px solid #f1f5f9;
+    padding-top: 24px;
+}
+
+.info-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.info-item i {
+    font-size: 20px;
+    color: var(--primary);
+    padding-top: 2px;
+}
+
+.info-item strong {
+    display: block;
+    color: var(--text-main);
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.info-item span {
+    color: var(--text-muted);
+    font-size: 14px;
+}
+
+/* ==========================================================================
+   Responsividad con Media Queries y Flexbox
+   ========================================================================== */
+
+/* 1. Modo Tablet (Pantallas Medianas) */
+@media (max-width: 991px) and (min-width: 577px) {
+    .sidebar {
+        width: 80px;
+        padding: 24px 12px;
+    }
+    
+    .logo-text, 
+    .link-text, 
+    .user-info {
+        display: none;
+    }
+    
+    .logo-wrapper {
+        justify-content: center;
+    }
+    
+    .nav-link {
+        justify-content: center;
+        padding: 12px;
+    }
+    
+    .user-profile {
+        justify-content: center;
+        padding: 8px;
+        background-color: transparent;
+    }
+    
+    .avatar {
+        border-color: transparent;
+    }
+}
+
+/* 2. Modo Móvil (Pantallas Pequeñas) */
+@media (max-width: 576px) {
+    .menu-toggle {
+        display: block;
+    }
+    
+    .top-bar {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 900;
+        padding: 16px 20px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+    }
+    
+    .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        width: 260px;
+        transform: translateX(-100%);
+        z-index: 1000;
+        box-shadow: 20px 0 30px rgba(0, 0, 0, 0.25);
+        transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
+    }
+    
+    .main-content {
+        padding-top: 73px; /* Espacio para la barra superior fija */
+    }
+    
+    .content-body {
+        padding: 20px;
+    }
+    
+    .welcome-card {
+        padding: 20px;
+    }
+}
